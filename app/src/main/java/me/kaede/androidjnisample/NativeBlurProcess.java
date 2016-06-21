@@ -21,6 +21,10 @@ public class NativeBlurProcess {
         System.load(context.getFilesDir() + File.separator + "libstackblur.so");
     }
 
+    public static void initLibs() {
+        System.loadLibrary("stackblur");
+    }
+
     public static Bitmap blur(Bitmap original, float radius) {
         long begin = System.currentTimeMillis();
         Bitmap bitmapOut = original.copy(Bitmap.Config.ARGB_8888, true);
