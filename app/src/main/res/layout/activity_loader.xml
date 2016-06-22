@@ -16,6 +16,20 @@
         android:layout_height="wrap_content"
         android:text="Blur"/>
 
+    <Button
+        android:id="@+id/execute_dex_in_reflection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/blur"
+        android:text="Execute Dex In Reflection"/>
+
+    <Button
+        android:id="@+id/execute_dex_in_interface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/execute_dex_in_reflection"
+        android:text="Execute Dex In Interface"/>
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"

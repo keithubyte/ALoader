@@ -1,1 +1,1 @@
-include ':app', ':dynamic'
+include ':app', ':dynamic', ':iface'
