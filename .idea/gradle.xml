@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dynamic" />
             <option value="$PROJECT_DIR$/iface" />
+            <option value="$PROJECT_DIR$/resource" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dynamic" />
             <option value="$PROJECT_DIR$/iface" />
+            <option value="$PROJECT_DIR$/resource" />
           </set>
         </option>
       </GradleProjectSettings>

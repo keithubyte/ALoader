@@ -1,5 +1,6 @@
 package com.demo.loader;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -44,6 +45,8 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
         blurBtn.setOnClickListener(this);
         reflectionDexBtn.setOnClickListener(this);
         interfaceDexBtn.setOnClickListener(this);
+
+        new AppCompatActivity();
     }
 
     @Override
@@ -56,7 +59,7 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
                 imageView.setImageBitmap(bitmap);
                 break;
             case R.id.execute_dex_in_reflection:
-                Class<?> rWorker = loadClass("dynamic.dex", "com.demo.dynamic.Worker");
+                Class<?> rWorker = loadClass();
                 if (rWorker != null) {
                     try {
                         Method method = rWorker.getDeclaredMethod("doJob");
@@ -68,7 +71,7 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.execute_dex_in_interface:
-                Class<?> iWorker = loadClass("dynamic.dex", "com.demo.dynamic.Worker");
+                Class<?> iWorker = loadClass();
                 if (iWorker != null) {
                     try {
                         IWorker instance = (IWorker) iWorker.newInstance();
@@ -83,12 +86,12 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private Class<?> loadClass(String dexName, String className) {
-        String dexPath = getFilesDir() + File.separator + dexName;
-        String optimizedDirectory = getCacheDir().getAbsolutePath();
+    private Class<?> loadClass() {
+        String dexPath = getFilesDir() + File.separator + "dynamic.dex";
+        String optimizedDirectory = getDir("dex", Context.MODE_PRIVATE).getAbsolutePath();
         DexClassLoader classLoader = new DexClassLoader(dexPath, optimizedDirectory, null, getClassLoader());
         try {
-            return classLoader.loadClass(className);
+            return classLoader.loadClass("com.demo.dynamic.Worker");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
