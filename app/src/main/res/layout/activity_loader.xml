@@ -30,6 +30,13 @@
         android:layout_toRightOf="@id/execute_dex_in_reflection"
         android:text="Execute Dex In Interface"/>
 
+    <Button
+        android:id="@+id/call_proxy_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/execute_dex_in_interface"
+        android:text="Call Proxy Activity"/>
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"

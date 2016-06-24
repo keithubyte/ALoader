@@ -1,6 +1,7 @@
 package com.demo.loader;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
     Button blurBtn;
     Button reflectionDexBtn;
     Button interfaceDexBtn;
+    Button callProxyBtn;
     ImageView imageView;
 
     @Override
@@ -40,11 +42,13 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
         blurBtn = (Button) findViewById(R.id.blur);
         reflectionDexBtn = (Button) findViewById(R.id.execute_dex_in_reflection);
         interfaceDexBtn = (Button) findViewById(R.id.execute_dex_in_interface);
+        callProxyBtn = (Button) findViewById(R.id.call_proxy_activity);
         imageView = (ImageView) findViewById(R.id.image);
 
         blurBtn.setOnClickListener(this);
         reflectionDexBtn.setOnClickListener(this);
         interfaceDexBtn.setOnClickListener(this);
+        callProxyBtn.setOnClickListener(this);
 
         new AppCompatActivity();
     }
@@ -80,6 +84,9 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
                         e.printStackTrace();
                     }
                 }
+                break;
+            case R.id.call_proxy_activity:
+                startActivity(new Intent(this, ProxyActivity.class));
                 break;
             default:
                 // ignored
