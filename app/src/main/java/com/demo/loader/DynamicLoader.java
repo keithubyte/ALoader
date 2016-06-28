@@ -12,7 +12,8 @@ import dalvik.system.DexClassLoader;
  */
 public class DynamicLoader {
 
-    private DynamicLoader(){}
+    private DynamicLoader() {
+    }
 
     public static Class<?> loadClass(Context context, String clz) {
         String dexPath = context.getFilesDir() + File.separator + "dynamic.dex";

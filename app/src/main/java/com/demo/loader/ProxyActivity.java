@@ -1,6 +1,7 @@
 package com.demo.loader;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -18,7 +19,7 @@ public class ProxyActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            Class<?> clz = DynamicLoader.loadClass(this, "com.demo.dynamic.DynamicActivity");
+            Class<?> clz = DynamicLoader.loadClass(this, "com.demo.dex.DynamicActivity");
             if (clz != null) {
                 mBase = (IActivity) clz.getDeclaredConstructor(Activity.class).newInstance(this);
             }
@@ -70,4 +71,8 @@ public class ProxyActivity extends Activity {
         }
     }
 
+    @Override
+    public Resources getResources() {
+        return super.getResources();
+    }
 }

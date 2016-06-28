@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dex" />
             <option value="$PROJECT_DIR$/dynamic" />
             <option value="$PROJECT_DIR$/iface" />
             <option value="$PROJECT_DIR$/resource" />
@@ -18,6 +19,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dex" />
             <option value="$PROJECT_DIR$/dynamic" />
             <option value="$PROJECT_DIR$/iface" />
             <option value="$PROJECT_DIR$/resource" />

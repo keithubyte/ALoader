@@ -1,1 +1,1 @@
-include ':app', ':dynamic', ':iface', ':resource'
+include ':app', ':dynamic', ':iface', ':resource', ':dex'
