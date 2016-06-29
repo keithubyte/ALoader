@@ -3,9 +3,12 @@ package com.demo.dex;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.demo.iface.IActivity;
@@ -29,6 +32,10 @@ public class DynamicActivity implements IActivity {
     public void onCreate(Bundle savedInstanceState) {
         Toast.makeText(activity, "onCreate()", Toast.LENGTH_LONG).show();
         View view = LayoutInflater.from(activity).inflate(resources.getLayout(R.layout.activity_dynamic), null);
+        ImageView imageView = (ImageView) view.findViewById(R.id.image);
+        TextView textView = (TextView) view.findViewById(R.id.text);
+        imageView.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.androidman));
+        textView.setText(resources.getString(R.string.greeting));
         activity.setContentView(view);
     }
 

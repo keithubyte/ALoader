@@ -98,7 +98,7 @@ public class LoaderActivity extends AppCompatActivity implements View.OnClickLis
         String optimizedDirectory = getDir("dex", Context.MODE_PRIVATE).getAbsolutePath();
         DexClassLoader classLoader = new DexClassLoader(dexPath, optimizedDirectory, null, getClassLoader());
         try {
-            return classLoader.loadClass("com.demo.dynamic.Worker");
+            return classLoader.loadClass("com.demo.dex.Worker");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
